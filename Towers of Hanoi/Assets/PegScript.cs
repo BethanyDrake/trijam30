@@ -6,6 +6,14 @@ public class PegScript : MonoBehaviour
 {
 
 
+    public bool IsValidMove(GameObject segment) {
+        if (segments.Count == 0) return true;
+        float segmentSize = segment.transform.localScale.x;
+        GameObject topSegment = segments[segments.Count - 1];
+        float topSegmentSize = topSegment.transform.localScale.x;
+        return (segmentSize <= topSegmentSize);
+    }
+
 
     public void AddSegment(GameObject segment) {
         segments.Add(segment);

@@ -44,9 +44,20 @@ public class Manager : MonoBehaviour {
     }
 
     void DropSegment() {
-         (segmentBeingLifted.GetComponent<Rigidbody>() as Rigidbody).isKinematic = false;
-         (targetPeg.GetComponent<PegScript>() as PegScript).AddSegment(segmentBeingLifted);
-         liftingSegment = false;
+        if ((targetPeg.GetComponent<PegScript>() as PegScript).IsValidMove(segmentBeingLifted)) {
+            (segmentBeingLifted.GetComponent<Rigidbody>() as Rigidbody).isKinematic = false;
+
+            (targetPeg.GetComponent<PegScript>() as PegScript).AddSegment(segmentBeingLifted);
+
+            liftingSegment = false;
+        } else {
+            WarnInvalidMove();
+        }
+
+    }
+
+    void WarnInvalidMove() {
+        Debug.Log("invalid move");
     }
 
 
