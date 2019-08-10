@@ -15,6 +15,8 @@ public class PegScript : MonoBehaviour
     }
 
 
+
+
     public void AddSegment(GameObject segment) {
         segments.Add(segment);
     }
@@ -42,11 +44,29 @@ public class PegScript : MonoBehaviour
         }
 
     }
+
+    public bool HasCompleteTower() {
+
+        Debug.Log("checking complete tower!" + this+ "segmentCount " + segments.Count);
+        if (segments.Count != 4) return false;
+        Debug.Log("a");
+        var team = (segments[0].GetComponent<SegmentScript>() as SegmentScript).team;
+        Debug.Log("tean" + team);
+        foreach(GameObject segment in segments) {
+            if ((segment.GetComponent<SegmentScript>() as SegmentScript).team != team) {
+                return false;
+            }
+            Debug.Log("correct");
+
+        }
+         return true;
+
+
+    }
     public List<GameObject> segments = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-
 
 
     }

@@ -8,6 +8,7 @@ public class SegmentScript : MonoBehaviour
 
     public bool rising;
 
+    public int team;
 
     public float speed;
     public float maxHeight;

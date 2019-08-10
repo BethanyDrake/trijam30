@@ -10,9 +10,10 @@ public class Manager : MonoBehaviour {
     public GameObject segmentBeingLifted;
     // Start is called before the first frame update
 
+    public GameObject[] pegs = new GameObject[3];
     public float travelDistanceRemaining;
     public float segmentMoveSpeed;
-
+    public bool cheat;
     public Vector3 targetPosition;
 
     public Vector3 direction;
@@ -40,7 +41,7 @@ public class Manager : MonoBehaviour {
         Manager.instance = this;
         liftingSegment = false;
         movingSegment = false;
-
+        cheat = false;
     }
 
     void DropSegment() {
@@ -50,11 +51,32 @@ public class Manager : MonoBehaviour {
             (targetPeg.GetComponent<PegScript>() as PegScript).AddSegment(segmentBeingLifted);
 
             liftingSegment = false;
+            CheckWinState();
         } else {
             WarnInvalidMove();
         }
 
     }
+
+    void EndGame() {
+        Debug.Log("you have won!");
+    }
+
+    void CheckWinState() {
+        Debug.Log("checking win state!");
+        if (cheat) EndGame();
+        int numCompleteTowers = 0;
+        foreach(GameObject peg in pegs) {
+            if ((peg.GetComponent<PegScript>() as PegScript).HasCompleteTower()) {
+                numCompleteTowers +=1;
+            }
+        }
+        Debug.Log(numCompleteTowers);
+         if (numCompleteTowers == 2) {
+            EndGame();
+        }
+    }
+
 
     void WarnInvalidMove() {
         Debug.Log("invalid move");
