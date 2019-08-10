@@ -10,3 +10,4 @@ Click the stack to lift a segment, click a different stack to make it fly over i
 If it's an invalid move it will lift back up. 
 
 BREAK: 7:36-8:36
+FINISH: 10:30
