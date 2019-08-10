@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PegScript : MonoBehaviour
+public class Manager : MonoBehaviour
 {
 
-
-    void OnMouseDown(){
-        Debug.Log("clicked!!");
-    }
-    public List<GameObject> segments = new List<GameObject>();
+    public static Manager instance;
+    public bool lifting;
     // Start is called before the first frame update
     void Start()
     {
+        Manager.instance = this;
+        lifting = false;
+
 
     }
 
