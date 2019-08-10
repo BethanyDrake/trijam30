@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour {
     public bool movingSegment;
     public GameObject segmentBeingLifted;
     // Start is called before the first frame update
+    public GameObject winText;
 
     public GameObject[] pegs = new GameObject[3];
     public float travelDistanceRemaining;
@@ -60,6 +61,7 @@ public class Manager : MonoBehaviour {
 
     void EndGame() {
         Debug.Log("you have won!");
+        winText.SetActive(true);
     }
 
     void CheckWinState() {
