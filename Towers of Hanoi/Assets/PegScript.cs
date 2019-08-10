@@ -8,9 +8,26 @@ public class PegScript : MonoBehaviour
 
     void OnMouseDown(){
         Debug.Log("clicked!!");
-        GameObject topSegment = segments[segments.Count -1];
-        (topSegment.GetComponent<SegmentScript>() as SegmentScript).Lift();
-        Debug.Log(topSegment);
+
+        if (Manager.instance.liftingSegment){
+            Manager.instance.DropSegmentOnPeg(gameObject);
+
+        }
+
+        if (!Manager.instance.liftingSegment){
+            if (segments.Count == 0) {
+                //do nothing
+            } else {
+                 Manager.instance.liftingSegment = true;
+                GameObject topSegment = segments[segments.Count -1];
+                (topSegment.GetComponent<SegmentScript>() as SegmentScript).Lift();
+                Manager.instance.segmentBeingLifted = topSegment;
+                segments.Remove(topSegment);
+                Debug.Log(topSegment);
+
+            }
+        }
+
     }
     public List<GameObject> segments = new List<GameObject>();
     // Start is called before the first frame update
