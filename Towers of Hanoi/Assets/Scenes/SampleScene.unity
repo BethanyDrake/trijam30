@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 438613825}
   - component: {fileID: 438613824}
   - component: {fileID: 438613823}
+  - component: {fileID: 438613828}
   m_Layer: 0
   m_Name: SmallSeg
   m_TagString: Untagged
@@ -320,6 +321,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438613828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438613822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a48bd925d084bf385ab91674308354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rising: 0
+  speed: 2
+  maxHeight: 1.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +647,7 @@ GameObject:
   - component: {fileID: 1441983721}
   - component: {fileID: 1441983720}
   - component: {fileID: 1441983724}
+  - component: {fileID: 1441983725}
   m_Layer: 0
   m_Name: LargeSeg
   m_TagString: Untagged
@@ -726,6 +743,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1441983725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441983719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a48bd925d084bf385ab91674308354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rising: 0
+  speed: 2
+  maxHeight: 1.5
 --- !u!1 &1649113330
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,6 +794,7 @@ MonoBehaviour:
   segmentMoveSpeed: 1
   targetPosition: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
+  targetPeg: {fileID: 0}
 --- !u!4 &1649113332
 Transform:
   m_ObjectHideFlags: 0
@@ -883,6 +916,7 @@ GameObject:
   - component: {fileID: 1814341207}
   - component: {fileID: 1814341206}
   - component: {fileID: 1814341205}
+  - component: {fileID: 1814341210}
   m_Layer: 0
   m_Name: MedSeg
   m_TagString: Untagged
@@ -978,6 +1012,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1814341210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814341204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a48bd925d084bf385ab91674308354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rising: 0
+  speed: 2
+  maxHeight: 1.5
 --- !u!1001 &4075205882871619382
 PrefabInstance:
   m_ObjectHideFlags: 0

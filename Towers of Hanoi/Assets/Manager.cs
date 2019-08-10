@@ -16,8 +16,11 @@ public class Manager : MonoBehaviour {
     public Vector3 targetPosition;
 
     public Vector3 direction;
+
+    public GameObject targetPeg;
     public void DropSegmentOnPeg (GameObject peg) {
         Debug.Log(peg);
+        targetPeg = peg;
         movingSegment = true;
         targetPosition = new Vector3 (peg.transform.position.x,
             segmentBeingLifted.transform.position.y,
@@ -40,6 +43,12 @@ public class Manager : MonoBehaviour {
 
     }
 
+    void DropSegment() {
+         (segmentBeingLifted.GetComponent<Rigidbody>() as Rigidbody).isKinematic = false;
+         (targetPeg.GetComponent<PegScript>() as PegScript).AddSegment(segmentBeingLifted);
+         liftingSegment = false;
+    }
+
 
     // Update is called once per frame
     void Update () {
@@ -51,6 +60,7 @@ public class Manager : MonoBehaviour {
             if (travelDistanceRemaining <= 0) {
                 segmentBeingLifted.transform.position = targetPosition;
                 movingSegment = false;
+                DropSegment();
             }
         }
 

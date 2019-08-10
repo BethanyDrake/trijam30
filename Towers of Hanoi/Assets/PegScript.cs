@@ -6,6 +6,10 @@ public class PegScript : MonoBehaviour
 {
 
 
+
+    public void AddSegment(GameObject segment) {
+        segments.Add(segment);
+    }
     void OnMouseDown(){
         Debug.Log("clicked!!");
 
@@ -15,10 +19,11 @@ public class PegScript : MonoBehaviour
         }
 
         if (!Manager.instance.liftingSegment){
+            Debug.Log("seg count ="+ segments.Count );
             if (segments.Count == 0) {
                 //do nothing
             } else {
-                 Manager.instance.liftingSegment = true;
+                Manager.instance.liftingSegment = true;
                 GameObject topSegment = segments[segments.Count -1];
                 (topSegment.GetComponent<SegmentScript>() as SegmentScript).Lift();
                 Manager.instance.segmentBeingLifted = topSegment;
