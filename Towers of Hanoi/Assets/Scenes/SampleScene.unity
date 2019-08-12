@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rising: 0
-  team: 0
+  team: 1
   speed: 2
   maxHeight: 1.5
 --- !u!1 &473816554
@@ -703,7 +703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rising: 0
-  team: 1
+  team: 0
   speed: 2
   maxHeight: 1.5
 --- !u!1 &843910096
