@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Koala.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Wombat.unity
+    guid: bfc85736dc0164be3802ee4d4363f978
+  - enabled: 1
+    path: Assets/Scenes/Wallaby.unity
+    guid: 6c68ac02607a24fafa88ef19bb82e0f0
+  - enabled: 1
+    path: Assets/Scenes/Echidna.unity
+    guid: 4f9654d0b2ae5490981ae40e50a7ddd7
+  - enabled: 1
+    path: Assets/levelSelectionScreen/StartScreen.unity
+    guid: 53b50149212754607a59ff47a8b55354
   m_configObjects: {}
