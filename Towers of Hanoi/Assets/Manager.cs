@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public abstract class WinChecker : MonoBehaviour
+{
+    public abstract bool CheckWinState(GameObject[] pegs);
+}
+
 public class Manager : MonoBehaviour {
 
     public static Manager instance;
@@ -19,6 +24,7 @@ public class Manager : MonoBehaviour {
 
     public Vector3 direction;
 
+    public WinChecker winChecker;
     public GameObject targetPeg;
     public void DropSegmentOnPeg (GameObject peg) {
         Debug.Log(peg);
@@ -62,21 +68,24 @@ public class Manager : MonoBehaviour {
     void EndGame() {
         Debug.Log("you have won!");
         winText.SetActive(true);
+        KongregateAPIBehaviour.LogPuzzleComplete();
     }
 
     void CheckWinState() {
-        Debug.Log("checking win state!");
-        if (cheat) EndGame();
-        int numCompleteTowers = 0;
-        foreach(GameObject peg in pegs) {
-            if ((peg.GetComponent<PegScript>() as PegScript).HasCompleteTower()) {
-                numCompleteTowers +=1;
-            }
-        }
-        Debug.Log(numCompleteTowers);
-         if (numCompleteTowers == 2) {
-            EndGame();
-        }
+        bool hasWon = winChecker.CheckWinState(pegs);
+        if (cheat || hasWon) EndGame();
+        // Debug.Log("checking win state!");
+        // if (cheat) EndGame();
+        // int numCompleteTowers = 0;
+        // foreach(GameObject peg in pegs) {
+        //     if ((peg.GetComponent<PegScript>() as PegScript).HasCompleteTower()) {
+        //         numCompleteTowers +=1;
+        //     }
+        // }
+        // Debug.Log(numCompleteTowers);
+        //  if (numCompleteTowers == 2) {
+        //     EndGame();
+        // }
     }
 
 
