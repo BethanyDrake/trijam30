@@ -10,6 +10,8 @@ public abstract class WinChecker : MonoBehaviour
 public class Manager : MonoBehaviour {
 
     public static Manager instance;
+
+    public int heightOfCompleteTower;
     public bool liftingSegment;
     public bool movingSegment;
     public GameObject segmentBeingLifted;

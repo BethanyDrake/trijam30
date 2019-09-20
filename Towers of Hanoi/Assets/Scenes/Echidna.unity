@@ -1630,6 +1630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f5d4087b77d4355b3aaea5be0761e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heightOfCompleteTower: 4
   liftingSegment: 0
   movingSegment: 0
   segmentBeingLifted: {fileID: 0}

@@ -48,7 +48,7 @@ public class PegScript : MonoBehaviour
     public bool HasCompleteTower() {
 
         Debug.Log("checking complete tower!" + this+ "segmentCount " + segments.Count);
-        if (segments.Count != 4) return false;
+        if (segments.Count != Manager.instance.heightOfCompleteTower) return false;
         Debug.Log("a");
         var team = (segments[0].GetComponent<SegmentScript>() as SegmentScript).team;
         Debug.Log("tean" + team);
